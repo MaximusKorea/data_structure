@@ -8,23 +8,23 @@
 #       ..........B - C
 #    -> B의 pointer에 none을 저장하고 C를 삭제한다.
 
-class Node:
+class MakeNode:
     def __init__(self, data, pointer=None):
         self.data = data
         self.pointer = pointer
 
-class NodeManage:
+class Node:
     def __init__(self,data):
-        self.head = Node(data)
+        self.head = MakeNode(data)
 
     def add(self,data):
         if self.head == '':
-            self.head = Node(data)
+            self.head = MakeNode(data)
         else:
             node = self.head
             while node.pointer:
                 node = node.pointer
-            node.pointer = Node(data)
+            node.pointer = MakeNode(data)
 
     def show(self):
         node = self.head
@@ -62,7 +62,7 @@ class NodeManage:
                 node = node.pointer
 
 
-LinkedList1 = NodeManage(0)
+LinkedList1 = Node(0)
 for new_data in range(1,10):
     LinkedList1.add(new_data)
 LinkedList1.show()

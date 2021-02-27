@@ -8,17 +8,17 @@
 # 노드 : 데이터저장공간 + 다음 노드의 데이터 저장공간(pointer)
 # 링크드 리스트의 기본단위 = 노드 = data + pointer
 
-class Node:
+class MakeNode:
     def __init__(self,data,pointer=None):
         self.data = data
         self.pointer = pointer
 def add(new_data): #새로운 값을 추가함
     node = head 
-    while node.pointer: #해당 node의 next에 값이 존재하면 그 다음 node의 주소를 해당 node로 가져온다 
+    while node.pointer: #해당 node의 pointer에 값이 존재하면 그 다음 node의 주소를 해당 node로 가져온다 
         node = node.pointer # 즉 다음 노드로 계속해서 넘어가게 된다.
-    node.pointer = Node(new_data) # 마지막 노드로 왔을 때는 해당 노드의 next값(다음 노드의 주소값)이 존재하지 않기 때문에 while문이 끝이난다.
-    #이 때 마지막 노드의 next 값에 새로운 선언된 노드의 주소값을 넣어준다.
-node1 = Node(1)
+    node.pointer = MakeNode(new_data) # 마지막 노드로 왔을 때는 해당 노드의 pointer값(다음 노드의 주소값)이 존재하지 않기 때문에 while문이 끝이난다.
+    #이 때 마지막 노드의 pointer 값에 새로운 선언된 노드의 주소값을 넣어준다.
+node1 = MakeNode(1)
 head = node1
 for new_data in range(2,10):
     add(new_data)
